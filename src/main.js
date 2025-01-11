@@ -1,13 +1,33 @@
 const container = document.querySelector("#grid");
 const containerWidth = container.offsetWidth;
-
 const length = 64;
 const width = 64;
+
+const colorPickerButton = document.querySelector("#color-picker-button")
+const hiddenColorPicker = document.querySelector("#color-picker")
+
+let backgroundColor = "#000000";
+
+
+
+
+
+colorPickerButton.addEventListener("click", () => {
+    hiddenColorPicker.click()
+    hiddenColorPicker.addEventListener("input",() => {
+        backgroundColor = hiddenColorPicker.value
+    })
+})
 
 let cellSize = containerWidth / length;
 
 
 let isMouseDown = false
+
+
+
+
+
 
 for (let i = 0; i <= (length * width)-1; i++) {
     const cell = document.createElement("div");
@@ -16,7 +36,7 @@ for (let i = 0; i <= (length * width)-1; i++) {
     cell.addEventListener("mousedown", () => {
         isMouseDown = true
         cell.classList.add("active");
-        cell.style.background = "rgb(116, 79, 79)";
+        cell.style.background = backgroundColor
     });
 
     document.addEventListener("mouseup",() => {
@@ -25,7 +45,7 @@ for (let i = 0; i <= (length * width)-1; i++) {
 
     cell.addEventListener("mousemove", () => {
         if (isMouseDown) {
-            cell.style.background = "rgb(0, 0, 0)";
+            cell.style.background = backgroundColor;
         }
     })
   

@@ -34,6 +34,7 @@ h1 {
     gap: 15px; 
 }
 
+
 .btn {
     background-color: #4CAF50;
     color: white;
@@ -76,4 +77,15 @@ h1 {
 .cell.active {
     background-color: #333;
     transition: background-color 0.2s;
+}
+
+#color-picker {
+    position: absolute; 
+    opacity: 0; 
+    width: 1px; 
+    height: 1px; 
+    margin: 0;
+    padding: 0;
+    border: none;
+    z-index: -1; 
 }
