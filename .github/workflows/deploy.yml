@@ -19,11 +19,15 @@ jobs:
 
     - name: Configure Git Identity
       run: |
-        git config --global user.email 97766579+Nearezz@users.noreply.github.com
-        git config --global user.name Nearez
+        git config --global user.email "97766579+Nearezz@users.noreply.github.com"
+        git config --global user.name "Nearezz"
 
     - name: Install dependencies
       run: npm install
 
     - name: Build and Deploy
-      run: npm run deploy
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        npx gh-pages -d src -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Nearezz/Etch-a-Sketch.git
+
