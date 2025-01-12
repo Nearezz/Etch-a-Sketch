@@ -10,24 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '16'
 
-    - name: Configure Git Identity
-      run: |
-        git config --global user.email "97766579+Nearezz@users.noreply.github.com"
-        git config --global user.name "Nearezz"
-
     - name: Install dependencies
       run: npm install
 
-    - name: Build and Deploy
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        npx gh-pages -d src -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Nearezz/Etch-a-Sketch.git
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: src
 
