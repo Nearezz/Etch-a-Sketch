@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etech-a-sktech</title>
+    <title>Etech-A-Sktech</title>
     <link rel="stylesheet" href="style.css">
 
     <script src="main.js" defer></script>
 </head>
 <body>
-    <h1>Etech-a-sktech</h1>
+    <h1>Etech-A-Sktech</h1>
     <div id="container">
         <div id="buttons">
+
             <button class="btn" id="color-picker-button">
                 <t>Color</t>
                 <input type="color" id="color-picker" value="#000000">
             </button>
             <button class="btn" id="eraser">Eraser</button>
             <button class="btn" id="clear">Clear</button>
-            <button class="btn" id="size">Size</button>
+
+            <div class="slidecontainer">
+                <label for="myRange" id="sizeText"><t id="sliderText">Size: 4 x 4</t></label>
+                <input type="range" min="4" max="64" value="4" class="slider" id="myRange">
+            </div>
+           
         </div>
         <div id="grid"></div>
     </div>
