@@ -21,6 +21,6 @@ A modern, web-based Etch-a-Sketch application built with **HTML**, **CSS**, and 
 - **JavaScript**: Interactivity.
 
 ## Run Locally 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Nearezz/Etch-a-Sketch.git
+1. Clone the repository: `git clone https://github.com/Nearezz/Etch-a-Sketch.git`
+2. Navigate to the project directory: `cd Etch-a-Sketch`
+3. Open the `index.html` file in your browser: `open index.html`
